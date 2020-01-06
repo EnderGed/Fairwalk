@@ -23,7 +23,10 @@ def main(data_path, data_name, data_type='instagram'):
     split_graph_in_5(data_path, '{}_known.edgelist'.format(data_name))
     # prepare fairly weighted graph for random walks, generates walks_eq.sh
     prep_5_equal_walks_insta(data_path, data_name)
+
+    ################################################################################
     # in Terminal, run bash scripts: walk.sh and walk_eq.sh using fast random walk project:
+    ################################################################################
 
     # get all 5 splits generate word2vec embeddings from walk files
     train_5_emb(data_path)
@@ -38,4 +41,8 @@ def main(data_path, data_name, data_type='instagram'):
     # sample fake friends in amount equal to real friends for each node, for all 5 splits
     sample_false_edges_equal_amount_5_sets(data_path)
 
-# we perform friendship recommendation in supervised.main2.py
+    # we perform friendship recommendation in supervised.main2.py
+
+
+if __name__ == '__main__':
+    main()
