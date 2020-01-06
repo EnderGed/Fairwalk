@@ -9,23 +9,11 @@ Created on Tue Jan 22 20:33:01 2019
 from fair import *
 from emb import *
 
-def main(data_path, data_name, data_type='instagram'):
-    '''
-    for example:
-        data_path = '../data/la'
-        data_name = 'la'
-        data_type = 'instagram'
-    '''
-    prepare_instagram_data('{}/{}'.format(data_path, data_name))
-    # remove all people with unknown or uncertain attributes, save result in _known file
-    filter_graph_known_only('{}/{}'.format(data_path, data_name))
-    # prepare training and testing data and prepares walks.sh
-    split_graph_in_5(data_path, '{}_known.edgelist'.format(data_name))
-    # prepare fairly weighted graph for random walks, generates walks_eq.sh
-    prep_5_equal_walks_insta(data_path, data_name)
+def main(data_path):
 
     ################################################################################
-    # in Terminal, run bash scripts: walk.sh and walk_eq.sh using fast random walk project:
+    # in Terminal, run bash scripts: walk.sh and walk_eq.sh using fast random walk project
+    # https://github.com/EnderGed/fast-random-walk
     ################################################################################
 
     # get all 5 splits generate word2vec embeddings from walk files
@@ -41,8 +29,9 @@ def main(data_path, data_name, data_type='instagram'):
     # sample fake friends in amount equal to real friends for each node, for all 5 splits
     sample_false_edges_equal_amount_5_sets(data_path)
 
-    # we perform friendship recommendation in supervised.main2.py
+    # we perform friendship recommendation in supervised.main3.py
 
 
 if __name__ == '__main__':
-    main()
+    data_path = '../data/la'
+    main(data_path)
