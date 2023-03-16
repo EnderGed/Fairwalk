@@ -5,4 +5,6 @@ STEPS
 4. Run supervised/main3.py
 Enjoy!
 
+You'll need to compile random walk from here: https://github.com/EnderGed/fast-random-walk
+
 Contact: enderged47+fairwalk@gmail.com, tahleen.rahman@cispa.saarland
