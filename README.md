@@ -5,5 +5,4 @@ STEPS
 4. Run supervised/main3.py
 Enjoy!
 
-Contact
-bartlomiej.surma@cispa.saarland, tahleen.rahman@cispa.saarland
+Contact: enderged47+fairwalk@gmail.com, tahleen.rahman@cispa.saarland
